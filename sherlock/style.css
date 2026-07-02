@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+:root {
+    --sherlock-bg: #0f1720;
+    --sherlock-surface: #1a2532;
+    --sherlock-surface-hover: #22303f;
+    --sherlock-border: #2c3b4a;
+    --sherlock-text: #e8edf2;
+    --sherlock-text-muted: #8c9aab;
+    --sherlock-accent: #d4a574;
+    --sherlock-accent-bg: rgba(212, 165, 116, 0.15);
+    --sherlock-accent-border: #d4a574;
+    --sherlock-radius: 10px;
+}
+
+body{
+    font-family: 'DM Mono', monospace;
+}
+
+.sherlock-header {
+    text-align: center;
+    padding: 2rem 1rem 1.5rem;
+}
+
+.sherlock-header h1 {
+    font-family: 'Carter One', monospace;
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+}
+
+.sherlock-header p {
+    color: var(--sherlock-text-muted);
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.sherlock-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+}
+
+.pistas-section {
+    margin-bottom: 1.5rem;
+}
+
+.pistas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.pistas-header h2 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--sherlock-text-muted);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+#filtro-pistas {
+    background: var(--sherlock-surface);
+    border: 1px solid var(--sherlock-border);
+    color: var(--sherlock-text);
+    border-radius: 8px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+    min-width: 180px;
+}
+#filtro-pistas:focus {
+    outline: 2px solid var(--sherlock-accent);
+    outline-offset: 1px;
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag-chip {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--sherlock-border);
+    background: var(--sherlock-surface);
+    color: var(--sherlock-text);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.tag-chip:hover {
+    background: var(--sherlock-surface-hover);
+}
+
+.tag-chip.selecionada {
+    background: var(--sherlock-accent-bg);
+    border-color: var(--sherlock-accent-border);
+    color: var(--sherlock-accent);
+}
+
+.tag-chip.escondida {
+    display: none;
+}
+
+.acoes {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-primary {
+    background: var(--sherlock-accent);
+    color: #1a1208;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--sherlock-text-muted);
+    border: 1px solid var(--sherlock-border);
+}
+
+.contador {
+    font-size: 0.85rem;
+    color: var(--sherlock-text-muted);
+}
+
+.resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.mensagem-vazia {
+    color: var(--sherlock-text-muted);
+    font-size: 0.9rem;
+    padding: 1rem 0;
+}
+
+.card-resultado {
+    background: var(--sherlock-surface);
+    border: 1px solid var(--sherlock-border);
+    border-radius: var(--sherlock-radius);
+    padding: 1rem 1.25rem;
+}
+
+.card-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.card-nome {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.card-match {
+    font-size: 0.75rem;
+    background: var(--sherlock-accent-bg);
+    color: var(--sherlock-accent);
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.card-categoria {
+    font-size: 0.75rem;
+    color: var(--sherlock-text-muted);
+    margin: 0 0 0.6rem;
+}
+
+.card-explicacao {
+    font-size: 0.9rem;
+    color: var(--sherlock-text);
+    line-height: 1.6;
+    margin: 0 0 0.5rem;
+}
+
+.card-caso {
+    font-size: 0.8rem;
+    color: var(--sherlock-text-muted);
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .pistas-header {
+    flex-direction: column;
+    align-items: flex-start;
+    } 
+    #filtro-pistas {
+    width: 100%;
+    }
+}
