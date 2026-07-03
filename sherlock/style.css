@@ -11,6 +11,7 @@
     --sherlock-accent-bg: rgba(212, 165, 116, 0.15);
     --sherlock-accent-border: #d4a574;
     --sherlock-radius: 10px;
+    --sherlock-warning: #be3e3e;
 }
 
 body{
@@ -63,6 +64,10 @@ body{
     text-transform: uppercase;
     letter-spacing: 0.03em;
 }
+.aviso{
+    background-color: var(--sherlock-warning);
+}
+
 
 #filtro-pistas {
     background: var(--sherlock-surface);

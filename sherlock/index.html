@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="sherlock-header">
-        <h1>Cloud Sherlock</h1>
-        <p>Selecione as pistas que descrevem o que você precisa. O Sherlock investiga e aponta os serviços AWS mais prováveis.</p>
+    <h1>Cloud Sherlock</h1>
+    <p class="aviso"> - Projeto em Desenvolvimento - </p>
+    <p>Selecione as pistas que descrevem o que você precisa. O Sherlock investiga e aponta os serviços AWS mais prováveis.</p>
     </header>
 
     <main class="sherlock-container">
-        <section>
-            <div>
-                <h2>
-                    Pistas disponíveis
-                </h2>
-                <input type="text"
-                        id="filtro-pistas"
-                        placeholder="Filtrar pistas..."
-                        aria-label="Filtrar pistas"
-                >
 
-            </div>
-            <div class="acoes">
-                <button id="btn-investigar" class="btn btn-primary">Investigar</button>
-                <button id="btn-limpar" class="btn btn-secundary">Limpar pistas</button>
-                <span id="contador" class="contador">0</span>
-            </div>
-            <section id="resultados" class="resultados" aria-live="polite"></section>
-        </section>
+    <section class="pistas-section">
+        <div class="pistas-header">
+        <h2>Pistas disponíveis</h2>
+        <input
+            type="text"
+            id="filtro-pistas"
+            placeholder="Filtrar pistas..."
+            aria-label="Filtrar pistas"
+        >
+        </div>
+        <div id="tag-cloud" class="tag-cloud" aria-live="polite"></div>
+    </section>
+
+    <div class="acoes">
+        <button id="btn-investigar" class="btn btn-primary">Investigar</button>
+        <button id="btn-limpar" class="btn btn-secondary">Limpar pistas</button>
+        <span id="contador" class="contador"></span>
+    </div>
+
+    <section id="resultados" class="resultados" aria-live="polite"></section>
+
     </main>
 
     <script type="module" src="script.js"></script>
