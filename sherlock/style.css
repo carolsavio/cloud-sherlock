@@ -183,6 +183,7 @@ body{
     font-weight: 600;
     font-size: 1.05rem;
     margin: 0;
+    color: var(--sherlock-text);
 }
 
 .card-match {
