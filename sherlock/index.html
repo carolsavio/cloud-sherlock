@@ -1,44 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Sherlock - Encontre o serviço AWS certo</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Sherlock - Encontre o serviço AWS certo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="sherlock-header">
+  <header class="sherlock-header">
     <h1>Cloud Sherlock</h1>
-    <p class="aviso"> - Projeto em Desenvolvimento - </p>
+    <p class="aviso"> - Projeto em Desenvolvimento - (Possíveis bugs) - </p>
     <p>Selecione as pistas que descrevem o que você precisa. O Sherlock investiga e aponta os serviços AWS mais prováveis.</p>
-    </header>
+  </header>
 
-    <main class="sherlock-container">
+  <main class="sherlock-container">
 
-    <section class="pistas-section">
-        <div class="pistas-header">
+    <div class="modo-tabs" role="tablist" aria-label="Modo de investigação">
+      <button id="tab-pistas" class="modo-tab ativo" role="tab" aria-selected="true" type="button">
+        Investigação por pista
+      </button>
+      <button id="tab-texto" class="modo-tab" role="tab" aria-selected="false" type="button">
+        Investigue você mesmo
+      </button>
+    </div>
+
+    <section id="modo-pistas-painel" class="pistas-section">
+      <div class="pistas-header">
         <h2>Pistas disponíveis</h2>
         <input
-            type="text"
-            id="filtro-pistas"
-            placeholder="Filtrar pistas..."
-            aria-label="Filtrar pistas"
+          type="text"
+          id="filtro-pistas"
+          placeholder="Filtrar pistas..."
+          aria-label="Filtrar pistas"
         >
-        </div>
-        <div id="tag-cloud" class="tag-cloud" aria-live="polite"></div>
+      </div>
+      <div id="tag-cloud" class="tag-cloud" aria-live="polite"></div>
+    </section>
+
+    <section id="modo-texto-painel" class="texto-section escondido">
+      <label for="input-texto-livre" class="texto-label">
+        Digite palavras-chave separadas por vírgula ou espaço
+      </label>
+      <input
+        type="text"
+        id="input-texto-livre"
+        class="input-texto-livre"
+        placeholder="ex: armazenamento barato, serverless"
+        autocomplete="off"
+      >
+      <p id="sugestao-texto" class="sugestao-texto" aria-live="polite"></p>
     </section>
 
     <div class="acoes">
-        <button id="btn-investigar" class="btn btn-primary">Investigar</button>
-        <button id="btn-limpar" class="btn btn-secondary">Limpar pistas</button>
-        <span id="contador" class="contador"></span>
+      <button id="btn-investigar" class="btn btn-primary" type="button">Investigar</button>
+      <button id="btn-limpar" class="btn btn-secondary" type="button">Limpar pistas</button>
+      <span id="contador" class="contador"></span>
     </div>
 
     <section id="resultados" class="resultados" aria-live="polite"></section>
 
-    </main>
+  </main>
 
-    <script type="module" src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 [
-    {
+  {
     "id": "s3",
     "nome": "Amazon S3",
     "categoria": "Armazenamento",
@@ -7,8 +7,8 @@
     "descricaoCurta": "Armazenamento de objetos escalável para qualquer tipo de dado.",
     "explicacao": "Guarda arquivos como objetos dentro de containers chamados buckets. Escala automaticamente, tem altíssima durabilidade e você paga só pelo espaço usado, sem precisar provisionar capacidade com antecedência.",
     "casoDeUso": "Hospedar imagens de um site, guardar backups, servir como base de um data lake."
-    },
-    {
+  },
+  {
     "id": "ec2",
     "nome": "Amazon EC2",
     "categoria": "Computação",
@@ -16,8 +16,8 @@
     "descricaoCurta": "Servidores virtuais redimensionáveis na nuvem.",
     "explicacao": "É uma máquina virtual alugada por hora ou segundo. Você escolhe sistema operacional, CPU e memória, e tem controle total, como se fosse um servidor físico só que sob demanda.",
     "casoDeUso": "Rodar uma aplicação web tradicional ou qualquer software que precise de um servidor dedicado."
-    },
-    {
+  },
+  {
     "id": "lambda",
     "nome": "AWS Lambda",
     "categoria": "Computação",
@@ -25,8 +25,8 @@
     "descricaoCurta": "Execute código sem provisionar ou gerenciar servidores.",
     "explicacao": "Você sobe uma função e ela roda apenas quando é chamada, por exemplo quando um arquivo é enviado ao S3. Paga só pelo tempo de execução, sem custo quando ocioso.",
     "casoDeUso": "Processar uma imagem assim que ela é enviada, rodar uma API leve, automatizar tarefas."
-    },
-    {
+  },
+  {
     "id": "elasticbeanstalk",
     "nome": "AWS Elastic Beanstalk",
     "categoria": "Computação",
@@ -34,8 +34,8 @@
     "descricaoCurta": "Plataforma para implantar aplicações web rapidamente.",
     "explicacao": "Você envia o código e o Beanstalk cuida do provisionamento, balanceamento de carga e escalonamento automaticamente, sem configurar cada peça manualmente.",
     "casoDeUso": "Subir uma aplicação web rapidamente sem configurar infraestrutura do zero."
-    },
-    {
+  },
+  {
     "id": "ecs",
     "nome": "Amazon ECS",
     "categoria": "Computação",
@@ -43,8 +43,8 @@
     "descricaoCurta": "Orquestração de containers Docker.",
     "explicacao": "Gerencia a execução de containers Docker em um cluster, cuidando de escalonamento, distribuição e reinício automático em caso de falha.",
     "casoDeUso": "Rodar uma aplicação empacotada em containers em produção."
-    },
-    {
+  },
+  {
     "id": "rds",
     "nome": "Amazon RDS",
     "categoria": "Banco de dados",
@@ -52,8 +52,8 @@
     "descricaoCurta": "Banco de dados relacional gerenciado.",
     "explicacao": "Oferece bancos como MySQL, PostgreSQL e SQL Server já configurados, com backup automático, patches de segurança e replicação. Você foca no schema e nas queries, não na administração do servidor.",
     "casoDeUso": "Aplicação com dados estruturados e relacionamentos, como um sistema de e-commerce."
-    },
-    {
+  },
+  {
     "id": "dynamodb",
     "nome": "Amazon DynamoDB",
     "categoria": "Banco de dados",
@@ -61,8 +61,8 @@
     "descricaoCurta": "Banco de dados NoSQL de chave-valor totalmente gerenciado.",
     "explicacao": "Banco não relacional com latência de milissegundos em qualquer escala. Não tem servidor para gerenciar e escala automaticamente conforme a demanda de leitura e escrita.",
     "casoDeUso": "Carrinho de compras, sessões de usuário, aplicações com alto volume de acessos."
-    },
-    {
+  },
+  {
     "id": "elasticache",
     "nome": "Amazon ElastiCache",
     "categoria": "Banco de dados",
@@ -70,8 +70,8 @@
     "descricaoCurta": "Cache em memória gerenciado.",
     "explicacao": "Guarda dados frequentemente acessados em memória RAM usando Redis ou Memcached, reduzindo drasticamente o tempo de resposta comparado a consultar o banco toda vez.",
     "casoDeUso": "Cachear resultados de queries pesadas ou sessões de usuário."
-    },
-    {
+  },
+  {
     "id": "vpc",
     "nome": "Amazon VPC",
     "categoria": "Rede",
@@ -79,8 +79,8 @@
     "descricaoCurta": "Rede privada isolada dentro da nuvem AWS.",
     "explicacao": "Permite criar sua própria rede virtual isolada, definindo sub-redes, tabelas de rota e regras de firewall. É a base de rede sobre a qual quase todos os outros serviços são colocados.",
     "casoDeUso": "Isolar recursos de produção dos de desenvolvimento, criar uma rede privada para um banco de dados."
-    },
-    {
+  },
+  {
     "id": "cloudfront",
     "nome": "Amazon CloudFront",
     "categoria": "Rede",
@@ -88,8 +88,8 @@
     "descricaoCurta": "Rede de distribuição de conteúdo (CDN).",
     "explicacao": "Distribui conteúdo, como imagens, vídeos e páginas estáticas, para servidores próximos ao usuário final, reduzindo a latência de carregamento.",
     "casoDeUso": "Acelerar a entrega de um site com usuários espalhados pelo mundo."
-    },
-    {
+  },
+  {
     "id": "route53",
     "nome": "Amazon Route 53",
     "categoria": "Rede",
@@ -97,8 +97,8 @@
     "descricaoCurta": "Serviço de DNS gerenciado e registro de domínios.",
     "explicacao": "Traduz nomes de domínio em endereços IP e pode rotear tráfego com base em latência, geografia ou saúde do endpoint.",
     "casoDeUso": "Apontar um domínio próprio para sua aplicação, configurar failover entre regiões."
-    },
-    {
+  },
+  {
     "id": "elb",
     "nome": "Elastic Load Balancing",
     "categoria": "Rede",
@@ -106,8 +106,8 @@
     "descricaoCurta": "Distribui tráfego de entrada entre múltiplos recursos.",
     "explicacao": "Recebe as requisições dos usuários e distribui entre várias instâncias EC2 ou containers, evitando que um único servidor fique sobrecarregado e melhorando a disponibilidade.",
     "casoDeUso": "Distribuir tráfego entre várias instâncias EC2 rodando a mesma aplicação."
-    },
-    {
+  },
+  {
     "id": "iam",
     "nome": "AWS IAM",
     "categoria": "Segurança",
@@ -115,8 +115,8 @@
     "descricaoCurta": "Gerencia quem pode acessar o quê na sua conta AWS.",
     "explicacao": "Define usuários, grupos e políticas de permissão. É o serviço responsável por controlar o acesso granular a todos os outros recursos da conta.",
     "casoDeUso": "Dar a um desenvolvedor acesso só ao S3, sem permissão de apagar bancos de dados."
-    },
-    {
+  },
+  {
     "id": "kms",
     "nome": "AWS KMS",
     "categoria": "Segurança",
@@ -124,17 +124,17 @@
     "descricaoCurta": "Gerenciamento de chaves de criptografia.",
     "explicacao": "Cria e controla as chaves usadas para criptografar dados em outros serviços AWS, como S3 e RDS, com controle detalhado de quem pode usá-las.",
     "casoDeUso": "Criptografar dados sensíveis armazenados em um bucket S3."
-    },
-    {
+  },
+  {
     "id": "cloudtrail",
     "nome": "AWS CloudTrail",
     "categoria": "Segurança",
-    "tags": ["auditoria", "logs", "segurança", "rastreamento", "compliance"],
+    "tags": ["auditoria", "logs", "segurança", "rastreamento", "compliance", "api", "usuários"],
     "descricaoCurta": "Registra chamadas de API feitas na conta.",
     "explicacao": "Grava quem fez o quê, quando e de onde na sua conta AWS, essencial para auditoria de segurança e conformidade.",
     "casoDeUso": "Investigar quem apagou um bucket S3 por engano."
-    },
-    {
+  },
+  {
     "id": "shield",
     "nome": "AWS Shield",
     "categoria": "Segurança",
@@ -142,8 +142,8 @@
     "descricaoCurta": "Proteção contra ataques DDoS.",
     "explicacao": "Monitora e mitiga automaticamente ataques de negação de serviço (DDoS) contra aplicações rodando na AWS. A versão básica é gratuita para todos os clientes.",
     "casoDeUso": "Proteger um site público contra picos anormais de tráfego malicioso."
-    },
-    {
+  },
+  {
     "id": "waf",
     "nome": "AWS WAF",
     "categoria": "Segurança",
@@ -151,8 +151,8 @@
     "descricaoCurta": "Firewall de aplicação web.",
     "explicacao": "Filtra requisições HTTP/HTTPS com base em regras que você define, bloqueando padrões maliciosos comuns como SQL injection e cross-site scripting.",
     "casoDeUso": "Bloquear requisições vindas de um país específico ou com padrão de SQL injection."
-    },
-    {
+  },
+  {
     "id": "sns",
     "nome": "Amazon SNS",
     "categoria": "Integração",
@@ -160,8 +160,8 @@
     "descricaoCurta": "Serviço de notificações e mensagens pub/sub.",
     "explicacao": "Permite enviar mensagens de um publicador para vários assinantes ao mesmo tempo, como email, SMS ou outra fila. Usado para desacoplar partes de um sistema.",
     "casoDeUso": "Avisar múltiplos sistemas quando um pedido é criado."
-    },
-    {
+  },
+  {
     "id": "sqs",
     "nome": "Amazon SQS",
     "categoria": "Integração",
@@ -169,8 +169,8 @@
     "descricaoCurta": "Fila de mensagens totalmente gerenciada.",
     "explicacao": "Armazena mensagens temporariamente entre dois componentes de um sistema, permitindo que processem no seu próprio ritmo, sem perder dados se um deles cair.",
     "casoDeUso": "Desacoplar o recebimento de pedidos do processamento de pagamento."
-    },
-    {
+  },
+  {
     "id": "apigateway",
     "nome": "Amazon API Gateway",
     "categoria": "Integração",
@@ -178,8 +178,8 @@
     "descricaoCurta": "Cria, publica e gerencia APIs.",
     "explicacao": "Atua como porta de entrada para suas APIs, cuidando de autenticação, limitação de taxa e roteamento para funções Lambda ou outros backends.",
     "casoDeUso": "Expor uma função Lambda como um endpoint HTTP para um app mobile."
-    },
-    {
+  },
+  {
     "id": "cloudwatch",
     "nome": "Amazon CloudWatch",
     "categoria": "Monitoramento",
@@ -187,8 +187,8 @@
     "descricaoCurta": "Monitoramento de recursos e aplicações.",
     "explicacao": "Coleta métricas, logs e eventos de praticamente todos os serviços AWS, permitindo criar dashboards e alarmes automáticos.",
     "casoDeUso": "Ser alertado quando o uso de CPU de um servidor passar de 80%."
-    },
-    {
+  },
+  {
     "id": "cloudformation",
     "nome": "AWS CloudFormation",
     "categoria": "Gerenciamento",
@@ -196,8 +196,8 @@
     "descricaoCurta": "Provisiona infraestrutura AWS via templates de código.",
     "explicacao": "Descreve toda a infraestrutura desejada em um arquivo de texto (JSON ou YAML) e a AWS cria e gerencia esses recursos automaticamente, de forma repetível.",
     "casoDeUso": "Recriar o mesmo ambiente de infraestrutura em múltiplas contas ou regiões."
-    },
-    {
+  },
+  {
     "id": "trustedadvisor",
     "nome": "AWS Trusted Advisor",
     "categoria": "Gerenciamento",
@@ -205,8 +205,8 @@
     "descricaoCurta": "Recomendações automáticas de custo, segurança e performance.",
     "explicacao": "Analisa sua conta AWS e sugere melhorias em cinco categorias: otimização de custos, performance, segurança, tolerância a falhas e limites de serviço.",
     "casoDeUso": "Descobrir recursos ociosos que estão gerando custo desnecessário."
-    },
-    {
+  },
+  {
     "id": "organizations",
     "nome": "AWS Organizations",
     "categoria": "Gerenciamento",
@@ -214,8 +214,8 @@
     "descricaoCurta": "Gerencia múltiplas contas AWS de forma centralizada.",
     "explicacao": "Permite agrupar várias contas AWS sob uma organização, com faturamento consolidado e políticas aplicadas centralmente a todas elas.",
     "casoDeUso": "Uma empresa com contas separadas por departamento, faturadas em um único lugar."
-    },
-    {
+  },
+  {
     "id": "costexplorer",
     "nome": "AWS Cost Explorer",
     "categoria": "Billing",
@@ -223,8 +223,8 @@
     "descricaoCurta": "Visualiza e analisa padrões de gastos na AWS.",
     "explicacao": "Mostra gráficos e relatórios detalhados de quanto você está gastando, por serviço, por período, ajudando a identificar tendências e prever custos futuros.",
     "casoDeUso": "Entender qual serviço está consumindo a maior parte do orçamento mensal."
-    },
-    {
+  },
+  {
     "id": "budgets",
     "nome": "AWS Budgets",
     "categoria": "Billing",
@@ -232,8 +232,8 @@
     "descricaoCurta": "Define orçamentos e recebe alertas ao ultrapassá-los.",
     "explicacao": "Permite configurar um limite de gasto mensal e ser notificado por email quando o consumo real ou projetado se aproxima ou ultrapassa esse valor.",
     "casoDeUso": "Ser avisado antes que o gasto do mês passe de um valor definido."
-    },
-    {
+  },
+  {
     "id": "autoscaling",
     "nome": "AWS Auto Scaling",
     "categoria": "Computação",
@@ -241,8 +241,8 @@
     "descricaoCurta": "Ajusta automaticamente a capacidade de recursos conforme a demanda.",
     "explicacao": "Aumenta ou diminui o número de instâncias EC2 (ou outros recursos) automaticamente, com base em regras de uso, garantindo performance sem pagar por capacidade ociosa.",
     "casoDeUso": "Adicionar mais servidores automaticamente durante um pico de acessos, e remover depois."
-    },
-    {
+  },
+  {
     "id": "secretsmanager",
     "nome": "AWS Secrets Manager",
     "categoria": "Segurança",
@@ -250,7 +250,5 @@
     "descricaoCurta": "Armazena e gerencia credenciais e segredos de forma segura.",
     "explicacao": "Guarda senhas de banco de dados, chaves de API e outras credenciais de forma criptografada, com rotação automática, evitando que fiquem hardcoded no código.",
     "casoDeUso": "Guardar a senha de conexão de um banco de dados sem deixá-la exposta no código-fonte."
-    }
-
-
+  }
 ]
