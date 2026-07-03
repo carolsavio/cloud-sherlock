@@ -1,254 +1,524 @@
 [
   {
-    "id": "s3",
-    "nome": "Amazon S3",
-    "categoria": "Armazenamento",
-    "tags": ["armazenamento", "objetos", "backup", "arquivos estáticos", "site estático", "barato", "durável", "data lake"],
-    "descricaoCurta": "Armazenamento de objetos escalável para qualquer tipo de dado.",
-    "explicacao": "Guarda arquivos como objetos dentro de containers chamados buckets. Escala automaticamente, tem altíssima durabilidade e você paga só pelo espaço usado, sem precisar provisionar capacidade com antecedência.",
-    "casoDeUso": "Hospedar imagens de um site, guardar backups, servir como base de um data lake."
-  },
-  {
     "id": "ec2",
     "nome": "Amazon EC2",
     "categoria": "Computação",
-    "tags": ["servidor virtual", "computação", "processamento", "escalável", "virtual machine", "instância"],
-    "descricaoCurta": "Servidores virtuais redimensionáveis na nuvem.",
-    "explicacao": "É uma máquina virtual alugada por hora ou segundo. Você escolhe sistema operacional, CPU e memória, e tem controle total, como se fosse um servidor físico só que sob demanda.",
-    "casoDeUso": "Rodar uma aplicação web tradicional ou qualquer software que precise de um servidor dedicado."
+    "tags": ["vm", "servidor", "instância", "linux", "windows", "compute", "escalável", "pague pelo uso", "IaaS"],
+    "descricaoCurta": "Máquinas virtuais executadas na nuvem.",
+    "explicacao": "Permite criar servidores virtuais sob demanda com diferentes tamanhos, sistemas operacionais e configurações. Você controla o sistema operacional, aplicações e armazenamento.",
+    "casoDeUso": "Hospedar aplicações web, APIs, bancos de dados e sistemas legados."
   },
   {
     "id": "lambda",
     "nome": "AWS Lambda",
     "categoria": "Computação",
-    "tags": ["serverless", "sem servidor", "funções", "evento", "baixo custo", "escalável", "sob demanda"],
-    "descricaoCurta": "Execute código sem provisionar ou gerenciar servidores.",
-    "explicacao": "Você sobe uma função e ela roda apenas quando é chamada, por exemplo quando um arquivo é enviado ao S3. Paga só pelo tempo de execução, sem custo quando ocioso.",
-    "casoDeUso": "Processar uma imagem assim que ela é enviada, rodar uma API leve, automatizar tarefas."
-  },
-  {
-    "id": "elasticbeanstalk",
-    "nome": "AWS Elastic Beanstalk",
-    "categoria": "Computação",
-    "tags": ["deploy", "plataforma", "paas", "facilidade", "gerenciado", "aplicação web"],
-    "descricaoCurta": "Plataforma para implantar aplicações web rapidamente.",
-    "explicacao": "Você envia o código e o Beanstalk cuida do provisionamento, balanceamento de carga e escalonamento automaticamente, sem configurar cada peça manualmente.",
-    "casoDeUso": "Subir uma aplicação web rapidamente sem configurar infraestrutura do zero."
+    "tags": ["serverless", "funções", "eventos", "sem servidor", "pague pelo uso", "gatilho"],
+    "descricaoCurta": "Executa código sem gerenciar servidores.",
+    "explicacao": "Executa funções em resposta a eventos. A AWS provisiona automaticamente a infraestrutura e você paga apenas pelo tempo de execução.",
+    "casoDeUso": "Processar uploads no S3, criar APIs, automações e integrações."
   },
   {
     "id": "ecs",
     "nome": "Amazon ECS",
+    "categoria": "Containers",
+    "tags": ["docker", "containers", "orquestração", "microservices"],
+    "descricaoCurta": "Orquestra containers Docker.",
+    "explicacao": "Serviço gerenciado para executar containers utilizando EC2 ou Fargate.",
+    "casoDeUso": "Executar aplicações baseadas em containers."
+  },
+  {
+    "id": "eks",
+    "nome": "Amazon EKS",
+    "categoria": "Containers",
+    "tags": ["kubernetes", "containers", "eks", "cluster"],
+    "descricaoCurta": "Kubernetes gerenciado pela AWS.",
+    "explicacao": "Facilita a execução de clusters Kubernetes altamente disponíveis.",
+    "casoDeUso": "Aplicações que utilizam Kubernetes."
+  },
+  {
+    "id": "fargate",
+    "nome": "AWS Fargate",
+    "categoria": "Containers",
+    "tags": ["serverless", "containers", "docker", "ecs", "eks"],
+    "descricaoCurta": "Executa containers sem gerenciar servidores.",
+    "explicacao": "Motor de execução para ECS e EKS onde você não precisa administrar instâncias EC2.",
+    "casoDeUso": "Aplicações em containers sem gerenciamento de infraestrutura."
+  },
+  {
+    "id": "elastic-beanstalk",
+    "nome": "Elastic Beanstalk",
     "categoria": "Computação",
-    "tags": ["container", "docker", "orquestração", "escalável", "microsserviços"],
-    "descricaoCurta": "Orquestração de containers Docker.",
-    "explicacao": "Gerencia a execução de containers Docker em um cluster, cuidando de escalonamento, distribuição e reinício automático em caso de falha.",
-    "casoDeUso": "Rodar uma aplicação empacotada em containers em produção."
+    "tags": ["deploy", "paas", "web", "java", "python", "node", "escalabilidade automática", "gerenciável", "monitoramento"],
+    "descricaoCurta": "Plataforma para implantação automática de aplicações.",
+    "explicacao": "Implanta aplicações automaticamente enquanto gerencia infraestrutura, balanceamento e escalabilidade.",
+    "casoDeUso": "Publicar aplicações rapidamente."
+  },
+  {
+    "id": "lightsail",
+    "nome": "Amazon Lightsail",
+    "categoria": "Computação",
+    "tags": ["vm", "simples", "wordpress", "vps", "baixo custo", " preço previsível", "aplicação simples"],
+    "descricaoCurta": "Servidor virtual simplificado.",
+    "explicacao": "Oferece máquinas virtuais com preço previsível e gerenciamento simplificado.",
+    "casoDeUso": "Sites pequenos, blogs e aplicações simples."
+  },
+  {
+    "id": "s3",
+    "nome": "Amazon S3",
+    "categoria": "Armazenamento",
+    "tags": ["armazenamento", "objetos", "backup", "bucket", "data lake"],
+    "descricaoCurta": "Armazenamento de objetos escalável.",
+    "explicacao": "Armazena objetos em buckets com alta durabilidade e escalabilidade praticamente ilimitada.",
+    "casoDeUso": "Backups, imagens, arquivos estáticos e data lakes."
+  },
+  {
+    "id": "efs",
+    "nome": "Amazon EFS",
+    "categoria": "Armazenamento",
+    "tags": ["nfs", "arquivos", "linux", "compartilhado", "múltiplas instâncias", "elástico"],
+    "descricaoCurta": "Sistema de arquivos compartilhado.",
+    "explicacao": "Fornece armazenamento NFS escalável acessível por várias instâncias EC2 simultaneamente.",
+    "casoDeUso": "Aplicações Linux compartilhando arquivos."
+  },
+  {
+    "id": "ebs",
+    "nome": "Amazon EBS",
+    "categoria": "Armazenamento",
+    "tags": ["volume", "ssd", "hdd", "ec2", "bloco", "baixa latência"],
+    "descricaoCurta": "Disco persistente para EC2.",
+    "explicacao": "Volumes de bloco conectados às instâncias EC2 para armazenamento persistente.",
+    "casoDeUso": "Sistema operacional, bancos de dados e aplicações."
+  },
+  {
+    "id": "fsx",
+    "nome": "Amazon FSx",
+    "categoria": "Armazenamento",
+    "tags": ["windows", "lustre", "netapp", "arquivos"],
+    "descricaoCurta": "Sistemas de arquivos especializados.",
+    "explicacao": "Disponibiliza sistemas de arquivos gerenciados para diferentes workloads.",
+    "casoDeUso": "Windows File Server, HPC e armazenamento corporativo."
+  },
+  {
+    "id": "storage-gateway",
+    "nome": "AWS Storage Gateway",
+    "categoria": "Armazenamento",
+    "tags": ["híbrido", "backup", "on-premises"],
+    "descricaoCurta": "Integra armazenamento local com AWS.",
+    "explicacao": "Conecta ambientes locais aos serviços de armazenamento da AWS.",
+    "casoDeUso": "Migração e backup híbrido."
   },
   {
     "id": "rds",
     "nome": "Amazon RDS",
-    "categoria": "Banco de dados",
-    "tags": ["banco de dados", "relacional", "sql", "gerenciado", "backup automático"],
+    "categoria": "Banco de Dados",
+    "tags": ["mysql", "postgres", "sql", "relacional", "multi-AZ", "gerenciado"],
     "descricaoCurta": "Banco de dados relacional gerenciado.",
-    "explicacao": "Oferece bancos como MySQL, PostgreSQL e SQL Server já configurados, com backup automático, patches de segurança e replicação. Você foca no schema e nas queries, não na administração do servidor.",
-    "casoDeUso": "Aplicação com dados estruturados e relacionamentos, como um sistema de e-commerce."
+    "explicacao": "Automatiza backups, atualizações, replicação e alta disponibilidade.",
+    "casoDeUso": "Aplicações que utilizam bancos relacionais."
+  },
+  {
+    "id": "aurora",
+    "nome": "Amazon Aurora",
+    "categoria": "Banco de Dados",
+    "tags": ["mysql", "postgres", "alto desempenho", "relacional", "alta disponibilidade"],
+    "descricaoCurta": "Banco relacional de alta performance.",
+    "explicacao": "Compatível com MySQL e PostgreSQL, oferecendo desempenho superior ao RDS tradicional.",
+    "casoDeUso": "Aplicações críticas com alta disponibilidade."
   },
   {
     "id": "dynamodb",
     "nome": "Amazon DynamoDB",
-    "categoria": "Banco de dados",
-    "tags": ["banco de dados", "nosql", "chave-valor", "serverless", "alta performance", "escalável"],
-    "descricaoCurta": "Banco de dados NoSQL de chave-valor totalmente gerenciado.",
-    "explicacao": "Banco não relacional com latência de milissegundos em qualquer escala. Não tem servidor para gerenciar e escala automaticamente conforme a demanda de leitura e escrita.",
-    "casoDeUso": "Carrinho de compras, sessões de usuário, aplicações com alto volume de acessos."
+    "categoria": "Banco de Dados",
+    "tags": ["nosql", "serverless", "key value", "alta performance", "gerenciado"],
+    "descricaoCurta": "Banco NoSQL totalmente gerenciado.",
+    "explicacao": "Banco de chave-valor e documentos com escalabilidade automática.",
+    "casoDeUso": "Aplicações web, mobile e IoT."
+  },
+  {
+    "id": "redshift",
+    "nome": "Amazon Redshift",
+    "categoria": "Analytics",
+    "tags": ["data warehouse", "bi", "analytics", "petabytes"],
+    "descricaoCurta": "Data Warehouse gerenciado.",
+    "explicacao": "Permite consultas analíticas em grandes volumes de dados.",
+    "casoDeUso": "Business Intelligence e relatórios."
   },
   {
     "id": "elasticache",
     "nome": "Amazon ElastiCache",
-    "categoria": "Banco de dados",
-    "tags": ["cache", "redis", "memcached", "baixa latência", "performance"],
-    "descricaoCurta": "Cache em memória gerenciado.",
-    "explicacao": "Guarda dados frequentemente acessados em memória RAM usando Redis ou Memcached, reduzindo drasticamente o tempo de resposta comparado a consultar o banco toda vez.",
-    "casoDeUso": "Cachear resultados de queries pesadas ou sessões de usuário."
+    "categoria": "Banco de Dados",
+    "tags": ["redis", "memcached", "cache"],
+    "descricaoCurta": "Cache em memória.",
+    "explicacao": "Acelera aplicações utilizando Redis ou Memcached.",
+    "casoDeUso": "Redução da latência e aumento de performance."
   },
   {
     "id": "vpc",
     "nome": "Amazon VPC",
     "categoria": "Rede",
-    "tags": ["rede", "isolamento", "segurança", "sub-rede", "privado"],
-    "descricaoCurta": "Rede privada isolada dentro da nuvem AWS.",
-    "explicacao": "Permite criar sua própria rede virtual isolada, definindo sub-redes, tabelas de rota e regras de firewall. É a base de rede sobre a qual quase todos os outros serviços são colocados.",
-    "casoDeUso": "Isolar recursos de produção dos de desenvolvimento, criar uma rede privada para um banco de dados."
-  },
-  {
-    "id": "cloudfront",
-    "nome": "Amazon CloudFront",
-    "categoria": "Rede",
-    "tags": ["cdn", "cache", "distribuição de conteúdo", "baixa latência", "estático"],
-    "descricaoCurta": "Rede de distribuição de conteúdo (CDN).",
-    "explicacao": "Distribui conteúdo, como imagens, vídeos e páginas estáticas, para servidores próximos ao usuário final, reduzindo a latência de carregamento.",
-    "casoDeUso": "Acelerar a entrega de um site com usuários espalhados pelo mundo."
+    "tags": ["rede", "sub-rede", "securança", "isolamento", "rotas"],
+    "descricaoCurta": "Rede virtual privada.",
+    "explicacao": "Permite criar redes isoladas, sub-redes, rotas e regras de segurança.",
+    "casoDeUso": "Infraestrutura segura para aplicações."
   },
   {
     "id": "route53",
     "nome": "Amazon Route 53",
     "categoria": "Rede",
-    "tags": ["dns", "domínio", "roteamento", "disponibilidade"],
-    "descricaoCurta": "Serviço de DNS gerenciado e registro de domínios.",
-    "explicacao": "Traduz nomes de domínio em endereços IP e pode rotear tráfego com base em latência, geografia ou saúde do endpoint.",
-    "casoDeUso": "Apontar um domínio próprio para sua aplicação, configurar failover entre regiões."
+    "tags": ["dns", "domínio", "roteamento", "alta disponibilidade"],
+    "descricaoCurta": "Serviço de DNS gerenciado.",
+    "explicacao": "Resolve nomes de domínio e realiza roteamento inteligente.",
+    "casoDeUso": "Hospedagem de DNS e failover."
   },
   {
-    "id": "elb",
-    "nome": "Elastic Load Balancing",
+    "id": "cloudfront",
+    "nome": "Amazon CloudFront",
     "categoria": "Rede",
-    "tags": ["balanceamento de carga", "disponibilidade", "escalável", "distribuição de tráfego"],
-    "descricaoCurta": "Distribui tráfego de entrada entre múltiplos recursos.",
-    "explicacao": "Recebe as requisições dos usuários e distribui entre várias instâncias EC2 ou containers, evitando que um único servidor fique sobrecarregado e melhorando a disponibilidade.",
-    "casoDeUso": "Distribuir tráfego entre várias instâncias EC2 rodando a mesma aplicação."
+    "tags": ["cdn", "cache", "latência", "entrega de conteúdo"],
+    "descricaoCurta": "CDN global da AWS.",
+    "explicacao": "Distribui conteúdo através de Edge Locations ao redor do mundo.",
+    "casoDeUso": "Sites, vídeos e APIs."
+  },
+  {
+    "id": "alb",
+    "nome": "Application Load Balancer",
+    "categoria": "Rede",
+    "tags": ["load balancer", "http", "https"],
+    "descricaoCurta": "Balanceador para aplicações HTTP/HTTPS.",
+    "explicacao": "Distribui tráfego entre múltiplos servidores considerando regras de aplicação.",
+    "casoDeUso": "Aplicações web e microsserviços."
+  },
+  {
+    "id": "nlb",
+    "nome": "Network Load Balancer",
+    "categoria": "Rede",
+    "tags": ["tcp", "udp", "alta performance"],
+    "descricaoCurta": "Balanceador na camada de transporte.",
+    "explicacao": "Projetado para alto desempenho e baixa latência.",
+    "casoDeUso": "Aplicações TCP e UDP."
+  },
+  {
+    "id": "api-gateway",
+    "nome": "Amazon API Gateway",
+    "categoria": "Integração",
+    "tags": ["api", "rest", "http", "serverless", "entrada de api", "websocket", "gerenciado", "monitorar"],
+    "descricaoCurta": "Gerenciamento de APIs.",
+    "explicacao": "Cria, publica e protege APIs REST e HTTP.",
+    "casoDeUso": "Integração com Lambda e microsserviços."
+  },
+  {
+    "id": "sqs",
+    "nome": "Amazon SQS",
+    "categoria": "Mensageria",
+    "tags": ["fila", "queue", "desacoplamento"],
+    "descricaoCurta": "Fila de mensagens.",
+    "explicacao": "Permite comunicação assíncrona entre aplicações.",
+    "casoDeUso": "Desacoplamento de sistemas."
+  },
+  {
+    "id": "sns",
+    "nome": "Amazon SNS",
+    "categoria": "Mensageria",
+    "tags": ["pubsub", "notificações", "email", "sms"],
+    "descricaoCurta": "Serviço de publicação e assinatura.",
+    "explicacao": "Distribui mensagens para múltiplos assinantes.",
+    "casoDeUso": "Notificações e eventos."
+  },
+  {
+    "id": "eventbridge",
+    "nome": "Amazon EventBridge",
+    "categoria": "Integração",
+    "tags": ["eventos", "event bus", "serverless"],
+    "descricaoCurta": "Barramento de eventos.",
+    "explicacao": "Conecta aplicações utilizando eventos.",
+    "casoDeUso": "Arquiteturas orientadas a eventos."
+  },
+  {
+    "id": "step-functions",
+    "nome": "AWS Step Functions",
+    "categoria": "Integração",
+    "tags": ["workflow", "orquestração", "lambda"],
+    "descricaoCurta": "Orquestra workflows.",
+    "explicacao": "Coordena múltiplos serviços utilizando fluxos de execução.",
+    "casoDeUso": "Processos complexos serverless."
   },
   {
     "id": "iam",
     "nome": "AWS IAM",
     "categoria": "Segurança",
-    "tags": ["segurança", "permissões", "usuários", "identidade", "controle de acesso"],
-    "descricaoCurta": "Gerencia quem pode acessar o quê na sua conta AWS.",
-    "explicacao": "Define usuários, grupos e políticas de permissão. É o serviço responsável por controlar o acesso granular a todos os outros recursos da conta.",
-    "casoDeUso": "Dar a um desenvolvedor acesso só ao S3, sem permissão de apagar bancos de dados."
+    "tags": ["usuários", "roles", "políticas", "permissões", "funções", "controle de acesso", "MFA"],
+    "descricaoCurta": "Controle de acesso.",
+    "explicacao": "Gerencia autenticação e autorização de usuários e serviços.",
+    "casoDeUso": "Controle de permissões."
+  },
+  {
+    "id": "cognito",
+    "nome": "Amazon Cognito",
+    "categoria": "Segurança",
+    "tags": ["login", "autenticação", "oauth", "federado"],
+    "descricaoCurta": "Autenticação para aplicações.",
+    "explicacao": "Gerencia login, cadastro e autenticação de usuários.",
+    "casoDeUso": "Apps web e mobile."
   },
   {
     "id": "kms",
     "nome": "AWS KMS",
     "categoria": "Segurança",
-    "tags": ["criptografia", "chaves", "segurança", "compliance", "dados sensíveis"],
-    "descricaoCurta": "Gerenciamento de chaves de criptografia.",
-    "explicacao": "Cria e controla as chaves usadas para criptografar dados em outros serviços AWS, como S3 e RDS, com controle detalhado de quem pode usá-las.",
-    "casoDeUso": "Criptografar dados sensíveis armazenados em um bucket S3."
+    "tags": ["criptografia", "chaves", "repouso"],
+    "descricaoCurta": "Gerenciamento de chaves criptográficas.",
+    "explicacao": "Cria e administra chaves usadas na criptografia dos serviços AWS.",
+    "casoDeUso": "Proteção de dados."
   },
   {
-    "id": "cloudtrail",
-    "nome": "AWS CloudTrail",
+    "id": "secrets-manager",
+    "nome": "AWS Secrets Manager",
     "categoria": "Segurança",
-    "tags": ["auditoria", "logs", "segurança", "rastreamento", "compliance", "api", "usuários"],
-    "descricaoCurta": "Registra chamadas de API feitas na conta.",
-    "explicacao": "Grava quem fez o quê, quando e de onde na sua conta AWS, essencial para auditoria de segurança e conformidade.",
-    "casoDeUso": "Investigar quem apagou um bucket S3 por engano."
-  },
-  {
-    "id": "shield",
-    "nome": "AWS Shield",
-    "categoria": "Segurança",
-    "tags": ["ddos", "proteção", "segurança", "ataque"],
-    "descricaoCurta": "Proteção contra ataques DDoS.",
-    "explicacao": "Monitora e mitiga automaticamente ataques de negação de serviço (DDoS) contra aplicações rodando na AWS. A versão básica é gratuita para todos os clientes.",
-    "casoDeUso": "Proteger um site público contra picos anormais de tráfego malicioso."
-  },
-  {
-    "id": "waf",
-    "nome": "AWS WAF",
-    "categoria": "Segurança",
-    "tags": ["firewall", "aplicação web", "segurança", "proteção", "regras"],
-    "descricaoCurta": "Firewall de aplicação web.",
-    "explicacao": "Filtra requisições HTTP/HTTPS com base em regras que você define, bloqueando padrões maliciosos comuns como SQL injection e cross-site scripting.",
-    "casoDeUso": "Bloquear requisições vindas de um país específico ou com padrão de SQL injection."
-  },
-  {
-    "id": "sns",
-    "nome": "Amazon SNS",
-    "categoria": "Integração",
-    "tags": ["notificação", "mensageria", "publicar assinar", "evento"],
-    "descricaoCurta": "Serviço de notificações e mensagens pub/sub.",
-    "explicacao": "Permite enviar mensagens de um publicador para vários assinantes ao mesmo tempo, como email, SMS ou outra fila. Usado para desacoplar partes de um sistema.",
-    "casoDeUso": "Avisar múltiplos sistemas quando um pedido é criado."
-  },
-  {
-    "id": "sqs",
-    "nome": "Amazon SQS",
-    "categoria": "Integração",
-    "tags": ["fila", "mensageria", "desacoplamento", "assíncrono"],
-    "descricaoCurta": "Fila de mensagens totalmente gerenciada.",
-    "explicacao": "Armazena mensagens temporariamente entre dois componentes de um sistema, permitindo que processem no seu próprio ritmo, sem perder dados se um deles cair.",
-    "casoDeUso": "Desacoplar o recebimento de pedidos do processamento de pagamento."
-  },
-  {
-    "id": "apigateway",
-    "nome": "Amazon API Gateway",
-    "categoria": "Integração",
-    "tags": ["api", "rest", "serverless", "gerenciamento de api"],
-    "descricaoCurta": "Cria, publica e gerencia APIs.",
-    "explicacao": "Atua como porta de entrada para suas APIs, cuidando de autenticação, limitação de taxa e roteamento para funções Lambda ou outros backends.",
-    "casoDeUso": "Expor uma função Lambda como um endpoint HTTP para um app mobile."
+    "tags": ["senha", "segredos", "credenciais", "tokens", "rotação"],
+    "descricaoCurta": "Armazena credenciais com segurança.",
+    "explicacao": "Gerencia senhas, tokens e chaves de API com rotação automática.",
+    "casoDeUso": "Aplicações que utilizam credenciais sensíveis."
   },
   {
     "id": "cloudwatch",
     "nome": "Amazon CloudWatch",
     "categoria": "Monitoramento",
-    "tags": ["monitoramento", "logs", "métricas", "alarmes", "observabilidade"],
-    "descricaoCurta": "Monitoramento de recursos e aplicações.",
-    "explicacao": "Coleta métricas, logs e eventos de praticamente todos os serviços AWS, permitindo criar dashboards e alarmes automáticos.",
-    "casoDeUso": "Ser alertado quando o uso de CPU de um servidor passar de 80%."
+    "tags": ["logs", "métricas", "alarme", "CPU"],
+    "descricaoCurta": "Monitoramento e observabilidade.",
+    "explicacao": "Coleta métricas, logs e eventos dos recursos AWS.",
+    "casoDeUso": "Monitoramento e alertas."
+  },
+  {
+    "id": "cloudtrail",
+    "nome": "AWS CloudTrail",
+    "categoria": "Governança",
+    "tags": ["auditoria", "logs", "compliance", "usuários", "api"],
+    "descricaoCurta": "Auditoria das ações realizadas na AWS.",
+    "explicacao": "Registra chamadas de API e atividades realizadas na conta.",
+    "casoDeUso": "Auditoria e segurança."
+  },
+  {
+    "id": "config",
+    "nome": "AWS Config",
+    "categoria": "Governança",
+    "tags": ["compliance", "configuração", "recursos", "auditar", "inventário"],
+    "descricaoCurta": "Rastreia configurações dos recursos.",
+    "explicacao": "Monitora alterações e conformidade da infraestrutura.",
+    "casoDeUso": "Governança e compliance."
   },
   {
     "id": "cloudformation",
     "nome": "AWS CloudFormation",
-    "categoria": "Gerenciamento",
-    "tags": ["infraestrutura como código", "automação", "template", "provisionamento"],
-    "descricaoCurta": "Provisiona infraestrutura AWS via templates de código.",
-    "explicacao": "Descreve toda a infraestrutura desejada em um arquivo de texto (JSON ou YAML) e a AWS cria e gerencia esses recursos automaticamente, de forma repetível.",
-    "casoDeUso": "Recriar o mesmo ambiente de infraestrutura em múltiplas contas ou regiões."
-  },
-  {
-    "id": "trustedadvisor",
-    "nome": "AWS Trusted Advisor",
-    "categoria": "Gerenciamento",
-    "tags": ["recomendações", "otimização de custos", "boas práticas", "segurança"],
-    "descricaoCurta": "Recomendações automáticas de custo, segurança e performance.",
-    "explicacao": "Analisa sua conta AWS e sugere melhorias em cinco categorias: otimização de custos, performance, segurança, tolerância a falhas e limites de serviço.",
-    "casoDeUso": "Descobrir recursos ociosos que estão gerando custo desnecessário."
+    "categoria": "DevOps",
+    "tags": ["iac", "infraestrutura", "template"],
+    "descricaoCurta": "Infraestrutura como código.",
+    "explicacao": "Cria e gerencia recursos AWS através de templates.",
+    "casoDeUso": "Provisionamento automatizado."
   },
   {
     "id": "organizations",
     "nome": "AWS Organizations",
-    "categoria": "Gerenciamento",
-    "tags": ["múltiplas contas", "governança", "billing consolidado", "gerenciamento centralizado"],
-    "descricaoCurta": "Gerencia múltiplas contas AWS de forma centralizada.",
-    "explicacao": "Permite agrupar várias contas AWS sob uma organização, com faturamento consolidado e políticas aplicadas centralmente a todas elas.",
-    "casoDeUso": "Uma empresa com contas separadas por departamento, faturadas em um único lugar."
+    "categoria": "Governança",
+    "tags": ["contas", "scp", "billing", "fatura consolidada"],
+    "descricaoCurta": "Gerenciamento de múltiplas contas AWS.",
+    "explicacao": "Centraliza contas, políticas e faturamento.",
+    "casoDeUso": "Ambientes corporativos."
   },
   {
-    "id": "costexplorer",
-    "nome": "AWS Cost Explorer",
-    "categoria": "Billing",
-    "tags": ["custos", "faturamento", "análise de gastos", "orçamento"],
-    "descricaoCurta": "Visualiza e analisa padrões de gastos na AWS.",
-    "explicacao": "Mostra gráficos e relatórios detalhados de quanto você está gastando, por serviço, por período, ajudando a identificar tendências e prever custos futuros.",
-    "casoDeUso": "Entender qual serviço está consumindo a maior parte do orçamento mensal."
-  },
-  {
-    "id": "budgets",
-    "nome": "AWS Budgets",
-    "categoria": "Billing",
-    "tags": ["orçamento", "alertas de custo", "faturamento", "controle de gastos"],
-    "descricaoCurta": "Define orçamentos e recebe alertas ao ultrapassá-los.",
-    "explicacao": "Permite configurar um limite de gasto mensal e ser notificado por email quando o consumo real ou projetado se aproxima ou ultrapassa esse valor.",
-    "casoDeUso": "Ser avisado antes que o gasto do mês passe de um valor definido."
+    "id": "trusted-advisor",
+    "nome": "AWS Trusted Advisor",
+    "categoria": "Otimização",
+    "tags": ["custos", "segurança", "boas práticas", "recomendações", "dicas", "verificações"],
+    "descricaoCurta": "Recomenda melhorias na conta AWS.",
+    "explicacao": "Analisa recursos e sugere otimizações de custo, segurança, desempenho e disponibilidade.",
+    "casoDeUso": "Melhorar arquitetura e reduzir custos."
   },
   {
     "id": "autoscaling",
-    "nome": "AWS Auto Scaling",
+    "nome": "Amazon EC2 Auto Scaling",
     "categoria": "Computação",
-    "tags": ["escalabilidade", "elasticidade", "demanda", "automático"],
-    "descricaoCurta": "Ajusta automaticamente a capacidade de recursos conforme a demanda.",
-    "explicacao": "Aumenta ou diminui o número de instâncias EC2 (ou outros recursos) automaticamente, com base em regras de uso, garantindo performance sem pagar por capacidade ociosa.",
-    "casoDeUso": "Adicionar mais servidores automaticamente durante um pico de acessos, e remover depois."
+    "tags": ["escalabilidade", "alta disponibilidade"],
+    "descricaoCurta": "Escala instâncias automaticamente.",
+    "explicacao": "Adiciona ou remove instâncias EC2 conforme a demanda.",
+    "casoDeUso": "Aplicações com carga variável."
   },
   {
-    "id": "secretsmanager",
-    "nome": "AWS Secrets Manager",
+    "id": "backup",
+    "nome": "AWS Backup",
+    "categoria": "Armazenamento",
+    "tags": ["backup", "recuperação", "snapshot", "rds", "ebs", "efs", "dynamodb", "centralizado"],
+    "descricaoCurta": "Centraliza e automatiza backups de recursos AWS.",
+    "explicacao": "Permite criar políticas de backup para diversos serviços AWS em um único lugar, automatizando agendamento, retenção e recuperação dos dados.",
+    "casoDeUso": "Automatizar backups de EBS, RDS, DynamoDB, EFS e outros recursos."
+  },
+  {
+    "id": "waf",
+    "nome": "AWS WAF",
     "categoria": "Segurança",
-    "tags": ["senhas", "credenciais", "segredos", "rotação automática", "segurança"],
-    "descricaoCurta": "Armazena e gerencia credenciais e segredos de forma segura.",
-    "explicacao": "Guarda senhas de banco de dados, chaves de API e outras credenciais de forma criptografada, com rotação automática, evitando que fiquem hardcoded no código.",
-    "casoDeUso": "Guardar a senha de conexão de um banco de dados sem deixá-la exposta no código-fonte."
+    "tags": ["firewall", "web", "http", "https", "sql injection", "xss", "cloudfront", "alb"],
+    "descricaoCurta": "Firewall para aplicações web.",
+    "explicacao": "Protege aplicações web filtrando requisições HTTP e HTTPS com base em regras personalizadas ou gerenciadas.",
+    "casoDeUso": "Bloquear ataques como SQL Injection e Cross-Site Scripting (XSS)."
+  },
+  {
+    "id": "shield",
+    "nome": "AWS Shield",
+    "categoria": "Segurança",
+    "tags": ["ddos", "proteção", "ataques", "cloudfront", "route53"],
+    "descricaoCurta": "Proteção contra ataques DDoS.",
+    "explicacao": "Fornece proteção automática contra ataques distribuídos de negação de serviço (DDoS), protegendo aplicações hospedadas na AWS.",
+    "casoDeUso": "Proteger aplicações públicas contra ataques DDoS."
+  },
+  {
+    "id": "firewall-manager",
+    "nome": "AWS Firewall Manager",
+    "categoria": "Segurança",
+    "tags": ["firewall", "waf", "shield", "políticas", "organizações", "multi-conta", "centralizado"],
+    "descricaoCurta": "Gerencia políticas de segurança centralizadas.",
+    "explicacao": "Permite aplicar e administrar regras do WAF, Shield e outros serviços de segurança em múltiplas contas da AWS.",
+    "casoDeUso": "Padronizar políticas de segurança em ambientes com várias contas."
+  },
+  {
+    "id": "inspector",
+    "nome": "Amazon Inspector",
+    "categoria": "Segurança",
+    "tags": ["vulnerabilidades", "scanner", "ec2", "ecr", "segurança", "varredura", "rede", "workloads"],
+    "descricaoCurta": "Identifica vulnerabilidades em workloads.",
+    "explicacao": "Analisa automaticamente instâncias EC2, imagens de containers e funções Lambda em busca de vulnerabilidades e exposições.",
+    "casoDeUso": "Detectar falhas de segurança antes que sejam exploradas."
+  },
+  {
+    "id": "guardduty",
+    "nome": "Amazon GuardDuty",
+    "categoria": "Segurança",
+    "tags": ["ameaças", "detecção", "logs", "segurança", "machine learning"],
+    "descricaoCurta": "Detecta ameaças automaticamente.",
+    "explicacao": "Monitora continuamente logs e eventos da AWS utilizando inteligência de ameaças e machine learning para identificar atividades suspeitas.",
+    "casoDeUso": "Detectar acessos suspeitos e possíveis comprometimentos da conta."
+  },
+  {
+    "id": "detective",
+    "nome": "AWS Detective",
+    "categoria": "Segurança",
+    "tags": ["investigação", "incidentes", "segurança", "análise"],
+    "descricaoCurta": "Investiga incidentes de segurança.",
+    "explicacao": "Ajuda a analisar e investigar eventos de segurança correlacionando informações coletadas de diversos serviços AWS.",
+    "casoDeUso": "Investigar rapidamente a origem de incidentes detectados pelo GuardDuty."
+  },
+  {
+    "id": "macie",
+    "nome": "Amazon Macie",
+    "categoria": "Segurança",
+    "tags": ["dados sensíveis", "s3", "lgpd", "pii", "compliance", "machine learning"],
+    "descricaoCurta": "Descobre e protege dados sensíveis no S3.",
+    "explicacao": "Utiliza machine learning para identificar automaticamente informações sensíveis armazenadas em buckets S3.",
+    "casoDeUso": "Localizar dados pessoais ou confidenciais em buckets S3."
+  },
+  {
+    "id": "ram",
+    "nome": "AWS RAM",
+    "categoria": "Governança",
+    "tags": ["compartilhamento", "recursos", "organizações", "multi-conta"],
+    "descricaoCurta": "Compartilha recursos entre contas AWS.",
+    "explicacao": "Permite compartilhar recursos compatíveis entre diferentes contas da AWS sem duplicá-los.",
+    "casoDeUso": "Compartilhar sub-redes ou Transit Gateway entre contas."
+  },
+  {
+    "id": "transit-gateway",
+    "nome": "AWS Transit Gateway",
+    "categoria": "Rede",
+    "tags": ["vpc", "hub", "roteamento", "vpn", "direct connect", "centralizado"],
+    "descricaoCurta": "Hub central para conectar redes.",
+    "explicacao": "Simplifica a comunicação entre múltiplas VPCs e conexões on-premises utilizando uma arquitetura centralizada.",
+    "casoDeUso": "Interligar diversas VPCs e redes locais."
+  },
+  {
+    "id": "direct-connect",
+    "nome": "AWS Direct Connect",
+    "categoria": "Rede",
+    "tags": ["rede dedicada", "baixa latência", "on-premises", "conectividade", "rede privada"],
+    "descricaoCurta": "Conexão privada entre ambiente local e AWS.",
+    "explicacao": "Estabelece uma conexão física dedicada entre o data center da empresa e a AWS, reduzindo latência e aumentando a estabilidade.",
+    "casoDeUso": "Empresas que precisam de conexão dedicada com a AWS."
+  },
+  {
+    "id": "site-to-site-vpn",
+    "nome": "AWS Site-to-Site VPN",
+    "categoria": "Rede",
+    "tags": ["vpn", "ipsec", "on-premises", "vpc", "túneis criptografados"],
+    "descricaoCurta": "Conecta redes locais à AWS por VPN.",
+    "explicacao": "Cria um túnel VPN criptografado entre o ambiente local e uma VPC na AWS através da internet.",
+    "casoDeUso": "Conectar um data center local à AWS com segurança."
+  },
+  {
+    "id": "global-accelerator",
+    "nome": "AWS Global Accelerator",
+    "categoria": "Rede",
+    "tags": ["baixa latência", "performance", "tráfego", "global", "failover", "ip estático"],
+    "descricaoCurta": "Melhora desempenho de aplicações globais.",
+    "explicacao": "Utiliza a rede global da AWS para encaminhar usuários ao endpoint saudável mais próximo, reduzindo latência.",
+    "casoDeUso": "Aplicações distribuídas globalmente que exigem baixa latência."
+  },
+  {
+    "id": "mq",
+    "nome": "Amazon MQ",
+    "categoria": "Mensageria",
+    "tags": ["broker", "activemq", "rabbitmq", "mensagens"],
+    "descricaoCurta": "Broker de mensagens gerenciado.",
+    "explicacao": "Serviço gerenciado compatível com Apache ActiveMQ e RabbitMQ para comunicação entre aplicações.",
+    "casoDeUso": "Migrar aplicações que já utilizam brokers tradicionais."
+  },
+  {
+    "id": "kinesis",
+    "nome": "Amazon Kinesis",
+    "categoria": "Analytics",
+    "tags": ["streaming", "tempo real", "logs", "eventos", "dados"],
+    "descricaoCurta": "Processamento de dados em tempo real.",
+    "explicacao": "Coleta, processa e analisa grandes volumes de dados em streaming com baixa latência.",
+    "casoDeUso": "Análise de logs, telemetria e eventos em tempo real."
+  },
+  {
+    "id": "glue",
+    "nome": "AWS Glue",
+    "categoria": "Analytics",
+    "tags": ["etl", "catálogo", "dados", "pipeline"],
+    "descricaoCurta": "Serviço gerenciado de ETL.",
+    "explicacao": "Descobre, transforma e movimenta dados entre diferentes fontes para preparação analítica.",
+    "casoDeUso": "Criar pipelines ETL para data lakes."
+  },
+  {
+    "id": "athena",
+    "nome": "Amazon Athena",
+    "categoria": "Analytics",
+    "tags": ["sql", "s3", "consulta", "serverless"],
+    "descricaoCurta": "Consulta dados no S3 utilizando SQL.",
+    "explicacao": "Permite executar consultas SQL diretamente sobre arquivos armazenados no Amazon S3 sem necessidade de servidores.",
+    "casoDeUso": "Analisar rapidamente arquivos armazenados em um data lake."
+  },
+  {
+    "id": "lake-formation",
+    "nome": "AWS Lake Formation",
+    "categoria": "Analytics",
+    "tags": ["data lake", "governança", "dados", "catálogo"],
+    "descricaoCurta": "Facilita a criação e governança de data lakes.",
+    "explicacao": "Automatiza a criação, segurança e gerenciamento de data lakes utilizando serviços como S3 e Glue.",
+    "casoDeUso": "Construir data lakes com controle centralizado de acesso."
+  },
+  {
+    "id": "datasync",
+    "nome": "AWS DataSync",
+    "categoria": "Migração",
+    "tags": ["migração", "arquivos", "transferência", "nfs", "efs", "s3"],
+    "descricaoCurta": "Transfere grandes volumes de dados para a AWS.",
+    "explicacao": "Automatiza e acelera a transferência de dados entre ambientes locais e serviços de armazenamento da AWS.",
+    "casoDeUso": "Migrar arquivos de servidores locais para S3 ou EFS."
+  },
+  {
+    "id": "migration-hub",
+    "nome": "AWS Migration Hub",
+    "categoria": "Migração",
+    "tags": ["migração", "rastreamento", "servidores", "planejamento"],
+    "descricaoCurta": "Centraliza o gerenciamento de migrações.",
+    "explicacao": "Permite acompanhar e gerenciar projetos de migração utilizando diversos serviços de migração da AWS em um único painel.",
+    "casoDeUso": "Monitorar o progresso da migração de aplicações e servidores para a AWS."
   }
 ]
